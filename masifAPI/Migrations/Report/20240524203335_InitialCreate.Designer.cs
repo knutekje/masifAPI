@@ -9,10 +9,10 @@ using masifAPI.Data;
 
 #nullable disable
 
-namespace masifAPI.Migrations
+namespace masifAPI.Migrations.Report
 {
-    [DbContext(typeof(FoodItemContext))]
-    [Migration("20240524191843_InitialCreate")]
+    [DbContext(typeof(ReportContext))]
+    [Migration("20240524203335_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -60,7 +60,7 @@ namespace masifAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FoodItems");
+                    b.ToTable("FoodItem");
                 });
 
             modelBuilder.Entity("masifAPI.Model.Report", b =>
@@ -110,7 +110,7 @@ namespace masifAPI.Migrations
 
                     b.HasIndex("FoodItemId");
 
-                    b.ToTable("Report");
+                    b.ToTable("Reports");
                 });
 
             modelBuilder.Entity("masifAPI.Model.Report", b =>

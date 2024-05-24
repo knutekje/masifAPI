@@ -19,7 +19,7 @@ public class IncidentContext : DbContext{
 {
    modelBuilder.Entity<Incident>()
     .Property(p => p.ValueIncident)
-    .HasComputedColumnSql("[Report.Quantity] * [Incident.ItemPrice]");
+    .HasComputedColumnSql("2 * [ItemPrice]");
 }
 }
 

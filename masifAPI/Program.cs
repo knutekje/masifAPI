@@ -9,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
 
 var credential = new DefaultAzureCredential();
 var connection = String.Empty;
@@ -43,6 +45,9 @@ if (app.Environment.IsDevelopment())
 }
 
 
+
+
+app.MapControllers();
 
 
 

@@ -75,15 +75,23 @@ public class Report{
 
 
 
-[PrimaryKey(nameof(Report), nameof(IdentityUser))]
+[PrimaryKey(nameof(ReportID), nameof(IdentityUser))]
 public class Incident{
+[Column("ReportID")]
+public long ReportID { get; set; }
+
+[Column("IdentityUser")]
+public long IdentityUser { get; set; }
+
 
 [Column("FoodID")]
 public long FoodID { get; set; }
 
+[Precision(18, 2)]
 [Column("ItemPrice")]
 public decimal ItemPrice { get; set;}
 
+[Precision(18, 2)]
 [Column("ValueIncident")]
 public decimal ValueIncident { get; set; } = 00000;
 
