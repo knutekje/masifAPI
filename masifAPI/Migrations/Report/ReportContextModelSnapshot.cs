@@ -22,44 +22,6 @@ namespace masifAPI.Migrations.Report
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("masifAPI.Model.FoodItem", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<int>("ExternalID")
-                        .HasColumnType("int")
-                        .HasColumnName("ExternalID");
-
-                    b.Property<decimal>("Price")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("Price");
-
-                    b.Property<string>("Supplier")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Supplier");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Title");
-
-                    b.Property<decimal>("Unit")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("Unit");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("FoodItem");
-                });
-
             modelBuilder.Entity("masifAPI.Model.Report", b =>
                 {
                     b.Property<long>("Id")
@@ -77,9 +39,6 @@ namespace masifAPI.Migrations.Report
                     b.Property<long>("FoodID")
                         .HasColumnType("bigint")
                         .HasColumnName("FoodID");
-
-                    b.Property<long>("FoodItemId")
-                        .HasColumnType("bigint");
 
                     b.Property<DateTime>("IncidentDate")
                         .HasColumnType("datetime2")
@@ -105,25 +64,7 @@ namespace masifAPI.Migrations.Report
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FoodItemId");
-
                     b.ToTable("Reports");
-                });
-
-            modelBuilder.Entity("masifAPI.Model.Report", b =>
-                {
-                    b.HasOne("masifAPI.Model.FoodItem", "FoodItem")
-                        .WithMany("Reports")
-                        .HasForeignKey("FoodItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("FoodItem");
-                });
-
-            modelBuilder.Entity("masifAPI.Model.FoodItem", b =>
-                {
-                    b.Navigation("Reports");
                 });
 #pragma warning restore 612, 618
         }

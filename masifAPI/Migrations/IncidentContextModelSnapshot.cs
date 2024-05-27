@@ -2,20 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using masifAPI.Data;
 
 #nullable disable
 
-namespace masifAPI.Migrations.Incident
+namespace masifAPI.Migrations
 {
     [DbContext(typeof(IncidentContext))]
-    [Migration("20240524205936_IncidentCreate")]
-    partial class IncidentCreate
+    partial class IncidentContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

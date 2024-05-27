@@ -33,7 +33,6 @@ public class FoodItem{
     [Column("ExternalID")]
     public int ExternalID { get; set; }
 
-    public ICollection<Report>? Reports { get; set; }
 
 }
 
@@ -66,7 +65,6 @@ public class Report{
     [Column("FoodID")]
     public long FoodID { get; set; }
 
-    public required FoodItem FoodItem { get; set; }
 
     [Column("Description")]
     public required String Description { get; set; }
@@ -101,7 +99,3 @@ public decimal ValueIncident { get; set; } = 00000;
 
 
 
-class IdentityUser{
-        public ICollection<Report>? Reports { get; set; }
-
-}

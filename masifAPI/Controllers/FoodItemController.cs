@@ -12,23 +12,23 @@ namespace masifAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FoodItemsController : ControllerBase
+    public class FoodItemController : ControllerBase
     {
         private readonly FoodItemContext _context;
 
-        public FoodItemsController(FoodItemContext context)
+        public FoodItemController(FoodItemContext context)
         {
             _context = context;
         }
 
-        // GET: api/FoodItems
+        // GET: api/FoodItem
         [HttpGet]
         public async Task<ActionResult<IEnumerable<FoodItem>>> GetFoodItems()
         {
             return await _context.FoodItems.ToListAsync();
         }
 
-        // GET: api/FoodItems/5
+        // GET: api/FoodItem/5
         [HttpGet("{id}")]
         public async Task<ActionResult<FoodItem>> GetFoodItem(long id)
         {
@@ -42,7 +42,7 @@ namespace masifAPI.Controllers
             return foodItem;
         }
 
-        // PUT: api/FoodItems/5
+        // PUT: api/FoodItem/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutFoodItem(long id, FoodItem foodItem)
@@ -73,7 +73,7 @@ namespace masifAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/FoodItems
+        // POST: api/FoodItem
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<FoodItem>> PostFoodItem(FoodItem foodItem)
@@ -84,7 +84,7 @@ namespace masifAPI.Controllers
             return CreatedAtAction("GetFoodItem", new { id = foodItem.Id }, foodItem);
         }
 
-        // DELETE: api/FoodItems/5
+        // DELETE: api/FoodItem/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteFoodItem(long id)
         {

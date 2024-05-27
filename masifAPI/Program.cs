@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 
+builder.Services.AddAntiforgery();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
@@ -37,15 +38,27 @@ builder.Services.AddDbContext<ReportContext>(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline.  
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
+app.UseAntiforgery();
 
 
+app.MapPost("/upload", async (IFormFile file) =>
+{
+    var tempFile = Path.GetFileName(file.FileName);
+     
+    
+    app.Logger.LogInformation(tempFile);
+    using var stream = File.OpenWrite(tempFile);
+    
+    await file.CopyToAsync(stream);
+    
+}).DisableAntiforgery();
 
 app.MapControllers();
 

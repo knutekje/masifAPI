@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace masifAPI.Migrations.Incident
+namespace masifAPI.Migrations
 {
     /// <inheritdoc />
     public partial class IncidentCreate : Migration

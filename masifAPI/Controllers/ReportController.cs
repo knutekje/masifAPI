@@ -42,6 +42,9 @@ namespace masifAPI.Controllers
             return report;
         }
 
+        
+
+
         // PUT: api/Report/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -83,6 +86,9 @@ namespace masifAPI.Controllers
 
             return CreatedAtAction("GetReport", new { id = report.Id }, report);
         }
+
+
+        
 
         // DELETE: api/Report/5
         [HttpDelete("{id}")]
