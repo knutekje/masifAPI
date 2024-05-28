@@ -1,4 +1,8 @@
 using Azure.Identity;
+using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
+using System;
+using System.IO;
 using masifAPI.Data;
 using masifAPI.Model;
 using Microsoft.EntityFrameworkCore;
@@ -27,6 +31,8 @@ builder.Services.AddCors(options =>
           .AllowAnyMethod();
       });
 });
+
+
 
 
 var credential = new DefaultAzureCredential();
@@ -68,14 +74,19 @@ app.UseAntiforgery();
 
 
 app.MapPost("/upload", async (IFormFile file) =>
+
 {
-    var tempFile = Path.GetFileName(file.FileName);
-     
+    var fileName = Path.GetFileName(file.FileName);
     
-    app.Logger.LogInformation(tempFile);
-    using var stream = File.OpenWrite(tempFile);
+    
+    
+    app.Logger.LogInformation(fileName);
+    using var stream = File.OpenWrite(fileName);
     
     await file.CopyToAsync(stream);
+    
+
+
     
 }).DisableAntiforgery();
 
