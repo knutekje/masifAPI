@@ -44,15 +44,15 @@ namespace masifAPI.Migrations.Report
                         .HasColumnType("datetime2")
                         .HasColumnName("IncidentDate");
 
+                    b.Property<string>("PictureId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("PictureId");
+
                     b.Property<decimal>("Quantity")
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)")
                         .HasColumnName("Quantity");
-
-                    b.Property<string>("ReportImgPath")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ReportImgPath");
 
                     b.Property<DateTime>("ReportedDate")
                         .HasColumnType("datetime2")

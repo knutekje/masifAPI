@@ -7,11 +7,27 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 
+
 builder.Services.AddAntiforgery();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+
+
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+      policy =>
+      {
+          policy
+          .WithOrigins("http://localhost:3000", "https://localhost:3000")
+          .AllowAnyHeader()
+          .AllowAnyMethod();
+      });
+});
+
 
 var credential = new DefaultAzureCredential();
 var connection = String.Empty;
@@ -33,6 +49,9 @@ builder.Services.AddDbContext<FoodItemContext>(options =>
     options.UseSqlServer(connection));
 
 builder.Services.AddDbContext<ReportContext>(options =>
+    options.UseSqlServer(connection));
+
+builder.Services.AddDbContext<PictureContext>(options =>
     options.UseSqlServer(connection));
 
 
@@ -63,6 +82,13 @@ app.MapPost("/upload", async (IFormFile file) =>
 app.MapControllers();
 
 
+app.UseRouting(); // i am not sure where this needs to be, since you are using a JS client. it might have to go after Cors middleware. Please edit this if you find out how where this line needs to go. for systems without JS clients, it goes before Cors middleware.
+
+app.UseCors(); // you dont have to specify a policy name since you configured a default policy.
+
+app.UseStaticFiles(); // this needs to go after cors middleware since you are using a JS client. this is confirmed at microsoft docs.
+
+app.UseAuthorization();
 
 app.UseHttpsRedirection();
 

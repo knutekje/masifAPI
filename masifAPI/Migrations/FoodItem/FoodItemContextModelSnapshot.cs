@@ -30,8 +30,9 @@ namespace masifAPI.Migrations.FoodItem
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<int>("ExternalID")
-                        .HasColumnType("int")
+                    b.Property<string>("ExternalID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExternalID");
 
                     b.Property<decimal>("Price")
@@ -49,9 +50,9 @@ namespace masifAPI.Migrations.FoodItem
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Title");
 
-                    b.Property<decimal>("Unit")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)")
+                    b.Property<string>("Unit")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("Unit");
 
                     b.HasKey("Id");

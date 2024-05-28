@@ -56,3 +56,20 @@ public class FoodItemContext : DbContext
     }
     
 }
+
+
+public class PictureContext : DbContext
+{
+    public PictureContext(DbContextOptions<PictureContext> options)
+        : base(options)
+    {
+    }
+
+    public DbSet<Picture> Pictures { get; set; } = null!;
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+       base.OnModelCreating(builder);
+    }
+    
+}

@@ -21,17 +21,16 @@ public class FoodItem{
     
     [Precision(18, 2)]
     [Column("Price")]
-    public Decimal Price { get; set; }
+    public decimal Price { get; set; }
    
-    [Precision(18, 2)]
     [Column("Unit")]
-    public Decimal Unit { get; set; }
+    public required string Unit { get; set; }
    
     [Column("Supplier")]
     public required string Supplier { get; set; }
    
     [Column("ExternalID")]
-    public int ExternalID { get; set; }
+    public required string ExternalID { get; set; }
 
 
 }
@@ -45,8 +44,8 @@ public class Report{
     [Column("Id")]
     public long Id { get; set; }
     
-    [Column("ReportImgPath")]
-    public required String ReportImgPath { get; set; }
+    [Column("PictureId")]
+    public required string PictureId { get; set; }
     
     [Column("ReportedDate")]
     public DateTime ReportedDate { get; set; }
@@ -56,7 +55,7 @@ public class Report{
     
     [Precision(18, 2)]
     [Column("Quantity")]
-    public Decimal Quantity { get; set; }
+    public decimal Quantity { get; set; }
     
     [Column("UserID")]
     public long UserID { get; set; }
@@ -67,7 +66,7 @@ public class Report{
 
 
     [Column("Description")]
-    public required String Description { get; set; }
+    public required string Description { get; set; }
 
 }
 
@@ -94,6 +93,29 @@ public decimal ItemPrice { get; set;}
 public decimal ValueIncident { get; set; } = 00000;
 
 
+}
+
+public class Picture{
+
+    [Column("Id")]
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Required]
+    public long Id { get; set; }
+
+    [Column("FileName")]
+    public required string FileName { get; set;}
+
+
+    [Column("FilePath")]
+    public required string FilePath { get; set;}
+
+
+    [Column("Description")]
+    public required string Description { get; set;}
+    
+
+    
 }
 
 
