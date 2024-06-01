@@ -676,3 +676,7 @@ C:/Users/Knut Edvard Kjersem/Code/masif/masifAPI/masifAPI/bin/Debug/net8.0/zh-Ha
 /home/knutekje/Documents/Code/masifAPI/masifAPI/obj/Debug/net8.0/masifAPI.pdb
 /home/knutekje/Documents/Code/masifAPI/masifAPI/obj/Debug/net8.0/masifAPI.genruntimeconfig.cache
 /home/knutekje/Documents/Code/masifAPI/masifAPI/obj/Debug/net8.0/ref/masifAPI.dll
+/home/knutekje/Documents/Code/masifAPI/masifAPI/bin/Debug/net8.0/Azure.Storage.Blobs.dll
+/home/knutekje/Documents/Code/masifAPI/masifAPI/bin/Debug/net8.0/Azure.Storage.Common.dll
+/home/knutekje/Documents/Code/masifAPI/masifAPI/bin/Debug/net8.0/System.ClientModel.dll
+/home/knutekje/Documents/Code/masifAPI/masifAPI/bin/Debug/net8.0/System.IO.Hashing.dll
