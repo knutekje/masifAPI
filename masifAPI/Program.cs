@@ -4,8 +4,15 @@ using Azure.Storage.Blobs.Models;
 using System;
 using System.IO;
 using masifAPI.Data;
+
 using masifAPI.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Identity;
+
+
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,9 +33,9 @@ builder.Services.AddCors(options =>
       policy =>
       {
           policy
-          .WithOrigins("http://localhost:3000", "https://localhost:3000")
-          .AllowAnyHeader()
-          .AllowAnyMethod();
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowAnyOrigin();
       });
 });
 
@@ -60,7 +67,14 @@ builder.Services.AddDbContext<ReportContext>(options =>
 builder.Services.AddDbContext<PictureContext>(options =>
     options.UseSqlServer(connection));
 
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connection));
+  
 
+builder.Services.AddAuthorization();
+
+builder.Services.AddIdentityApiEndpoints<IdentityUser>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.  
@@ -69,6 +83,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+
 
 app.UseAntiforgery();
 
@@ -91,15 +107,19 @@ app.MapPost("/upload", async (IFormFile file) =>
 }).DisableAntiforgery();
 
 app.MapControllers();
-
-
+app.MapIdentityApi<IdentityUser>();
 app.UseRouting(); // i am not sure where this needs to be, since you are using a JS client. it might have to go after Cors middleware. Please edit this if you find out how where this line needs to go. for systems without JS clients, it goes before Cors middleware.
 
-app.UseCors(); // you dont have to specify a policy name since you configured a default policy.
-
+app.UseCors(builder => builder
+       .AllowAnyHeader()
+       .AllowAnyMethod()
+       .AllowAnyOrigin()
+    );
+app.UseRouting(); // i am not sure where this needs to be, since you are using a JS client. it might have to go after Cors middleware. Please edit this if you find out how where this line needs to go. for systems without JS clients, it goes before Cors middleware.
+  
 app.UseStaticFiles(); // this needs to go after cors middleware since you are using a JS client. this is confirmed at microsoft docs.
 
-app.UseAuthorization();
+//app.UseAuthorization();
 
 app.UseHttpsRedirection();
 
@@ -107,3 +127,13 @@ app.UseHttpsRedirection();
 
 app.Run();
 
+
+public class LogActionFilter : ActionFilterAttribute
+{
+    public override void OnActionExecuting(ActionExecutingContext context)
+    {
+        var request = context.HttpContext.Request;
+        Console.WriteLine($"Request method: {request.Method}");
+        base.OnActionExecuting(context);
+    }
+};

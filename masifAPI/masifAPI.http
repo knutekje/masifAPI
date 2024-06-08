@@ -1,6 +1,5 @@
 @masifAPI_HostAddress = http://localhost:5223
 
-GET {{masifAPI_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###

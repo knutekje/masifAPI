@@ -1,6 +1,7 @@
 using System.Data.Common;
 using System.Reflection;
 using masifAPI.Model;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 namespace masifAPI.Data;
@@ -21,6 +22,9 @@ public class IncidentContext : DbContext{
     .Property(p => p.ValueIncident)
     .HasComputedColumnSql("2 * [ItemPrice]");
 }
+
+
+
 }
 
 
