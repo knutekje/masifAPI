@@ -680,3 +680,9 @@ C:/Users/Knut Edvard Kjersem/Code/masif/masifAPI/masifAPI/bin/Debug/net8.0/zh-Ha
 /home/knutekje/Documents/Code/masifAPI/masifAPI/bin/Debug/net8.0/Azure.Storage.Common.dll
 /home/knutekje/Documents/Code/masifAPI/masifAPI/bin/Debug/net8.0/System.ClientModel.dll
 /home/knutekje/Documents/Code/masifAPI/masifAPI/bin/Debug/net8.0/System.IO.Hashing.dll
+/home/knutekje/Documents/Code/masifAPI/masifAPI/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/home/knutekje/Documents/Code/masifAPI/masifAPI/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/home/knutekje/Documents/Code/masifAPI/masifAPI/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/home/knutekje/Documents/Code/masifAPI/masifAPI/bin/Debug/net8.0/Microsoft.Extensions.Identity.Core.dll
+/home/knutekje/Documents/Code/masifAPI/masifAPI/bin/Debug/net8.0/Microsoft.Extensions.Identity.Stores.dll
+/home/knutekje/Documents/Code/masifAPI/masifAPI/bin/Debug/net8.0/Microsoft.Extensions.Options.dll

@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using masifAPI.Data;
 using masifAPI.Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace masifAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class FoodItemController : ControllerBase
     {
         private readonly FoodItemContext _context;
