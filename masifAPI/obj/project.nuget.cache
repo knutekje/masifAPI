@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8IMn7MLySmE=",
+  "dgSpecHash": "l0DcAaVayYA=",
   "success": true,
   "projectFilePath": "/home/knutekje/Documents/Code/masifAPI/masifAPI/masifAPI.csproj",
   "expectedPackageFiles": [
@@ -183,5 +183,16 @@
     "/home/knutekje/.nuget/packages/system.threading.tasks.dataflow/7.0.0/system.threading.tasks.dataflow.7.0.0.nupkg.sha512",
     "/home/knutekje/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Azure.Identity' 1.11.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-m5vv-6r4h-3vj9",
+      "libraryId": "Azure.Identity",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

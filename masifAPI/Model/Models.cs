@@ -45,7 +45,7 @@ public class Report{
     public long Id { get; set; }
     
     [Column("PictureId")]
-    public required string PictureId { get; set; }
+    public required long PictureId { get; set; }
     
     [Column("ReportedDate")]
     public DateTime ReportedDate { get; set; }

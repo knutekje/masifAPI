@@ -4,7 +4,7 @@ using Azure.Storage.Blobs.Models;
 using System;
 using System.IO;
 using masifAPI.Data;
-
+using Microsoft.Extensions.FileProviders;
 using masifAPI.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +12,8 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
 
-
+using Microsoft.AspNetCore.StaticFiles;
+using Microsoft.Extensions.FileProviders;
 
 
 
@@ -26,7 +27,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-
+builder.Services.AddDirectoryBrowser();
 
 builder.Services.AddCors(options =>
 {
@@ -87,6 +88,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.MapIdentityApi<IdentityUser>();
+
+
+
 
 
 app.UseAntiforgery();
