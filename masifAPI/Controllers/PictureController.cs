@@ -27,17 +27,19 @@ namespace masifAPI.Controllers
         {
             return await _context.Pictures.ToListAsync();
         }
-
+        
         // GET: api/Picture/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Picture>> GetPicture(long id)
         {
             var picture = await _context.Pictures.FindAsync(id);
+            
 
             if (picture == null)
             {
                 return NotFound();
             }
+            
 
             return picture;
         }
