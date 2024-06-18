@@ -96,7 +96,7 @@ app.MapIdentityApi<IdentityUser>();
 app.UseAntiforgery();
 
 
-app.MapPost("/upload", async (IFormFile file) =>
+/* app.MapPost("/upload", async (IFormFile file) =>
 
 {
     var fileName = Path.GetFileName(file.FileName);
@@ -111,7 +111,10 @@ app.MapPost("/upload", async (IFormFile file) =>
 
 
     
-}).DisableAntiforgery();
+}).DisableAntiforgery(); */
+// Create a BlobServiceClient that will authenticate through Active Directory
+Uri accountUri = new Uri("https://MYSTORAGEACCOUNT.blob.core.windows.net/");
+BlobServiceClient client = new BlobServiceClient(accountUri, new DefaultAzureCredential());
 
 app.MapControllers();
 app.UseRouting(); 

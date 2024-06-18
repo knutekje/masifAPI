@@ -114,4 +114,3 @@ namespace masifAPI.Controllers
 }
 
 
-//dotnet aspnet-codegenerator controller -name PictureController -async -api -m Picture -dc PictureContext -outDir Controllers

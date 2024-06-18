@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using masifAPI.Data;
 
@@ -10,9 +11,11 @@ using masifAPI.Data;
 namespace masifAPI.Migrations.Picture
 {
     [DbContext(typeof(PictureContext))]
-    partial class PictureContextModelSnapshot : ModelSnapshot
+    [Migration("20240618215658_updatePiture2")]
+    partial class updatePiture2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

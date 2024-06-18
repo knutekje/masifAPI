@@ -12,6 +12,7 @@ namespace masifAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class PictureController : ControllerBase
     {
         private readonly PictureContext _context;
@@ -78,11 +79,15 @@ namespace masifAPI.Controllers
         // POST: api/Picture
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Picture>> PostPicture(Picture picture)
+        public async Task<ActionResult<Picture>> PostPicture(IFormFile file, Picture picture)
         {
-            _context.Pictures.Add(picture);
-            await _context.SaveChangesAsync();
+            
+            
 
+            _context.Pictures.Add(picture);
+            
+            await _context.SaveChangesAsync();
+          
             return CreatedAtAction("GetPicture", new { id = picture.Id }, picture);
         }
 
