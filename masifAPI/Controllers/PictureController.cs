@@ -79,7 +79,7 @@ namespace masifAPI.Controllers
         // POST: api/Picture
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Picture>> PostPicture(IFormFile file, Picture picture)
+        public async Task<ActionResult<Picture>> PostPicture(Picture picture)
         {
             
             

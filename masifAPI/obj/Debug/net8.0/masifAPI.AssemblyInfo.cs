@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("masifAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b32c228e92f5f0de927dab55780ccb5d415333a0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c625ec00b498045a6817db4935d71a31dc672a0")]
 [assembly: System.Reflection.AssemblyProductAttribute("masifAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("masifAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
