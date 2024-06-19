@@ -36,7 +36,7 @@ public class BildeController : ControllerBase {
         }
     
 
-    [HttpPost("/upload")]
+    [HttpPost]
     public  async Task<CreatedAtActionResult> PostUpload(IFormFile file){
 
             var fileName = Path.GetFileName(file.FileName);
