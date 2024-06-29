@@ -44,13 +44,13 @@ builder.Services.AddCors(options =>
 var connection = "Server=192.168.0.107;Database=masifAPI;Port=5432;User Id=knutekje;Password=hore23;Ssl Mode=Require";
 
 
-builder.Services.AddDbContext<Masif>(options =>
+builder.Services.AddDbContext<ReportContext>(options =>
     options.UseNpgsql(connection));
           
-
+/* 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connection)); 
-
+ */
   
   
 
