@@ -41,22 +41,12 @@ builder.Services.AddCors(options =>
       });
 });
 
+var connection = "Server=192.168.100.103;Database=masifAPI;Port=5432;User Id=knutekje;Password=hore23;Ssl Mode=Require";
 
 
 
-var credential = new DefaultAzureCredential();
-var connection = String.Empty;
-if (builder.Environment.IsDevelopment())
-{
-    builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Development.json");
-    connection = builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING");
-}
-else
-{
-    connection = Environment.GetEnvironmentVariable("AZURE_SQL_CONNECTIONSTRING");
-}
 
-
+/* 
 builder.Services.AddDbContext<IncidentContext>(options =>
     options.UseSqlServer(connection));
 
@@ -70,7 +60,22 @@ builder.Services.AddDbContext<PictureContext>(options =>
     options.UseSqlServer(connection));
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connection));
+    options.UseSqlServer(connection)); */
+
+builder.Services.AddDbContext<IncidentContext>(options =>
+          options.UseNpgsql(connection));
+          
+builder.Services.AddDbContext<FoodItemContext>(options =>
+          options.UseNpgsql(connection));
+
+builder.Services.AddDbContext<ReportContext>(options =>
+          options.UseNpgsql(connection));
+
+builder.Services.AddDbContext<PictureContext>(options =>
+          options.UseNpgsql(connection));
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connection)); 
 
   
   
