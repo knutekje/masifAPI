@@ -961,3 +961,14 @@ C:\Users\Knut Edvard Kjersem\Code\masif\masifAPI\masifAPI\obj\Debug\net8.0\refin
 C:\Users\Knut Edvard Kjersem\Code\masif\masifAPI\masifAPI\obj\Debug\net8.0\masifAPI.pdb
 C:\Users\Knut Edvard Kjersem\Code\masif\masifAPI\masifAPI\obj\Debug\net8.0\masifAPI.genruntimeconfig.cache
 C:\Users\Knut Edvard Kjersem\Code\masif\masifAPI\masifAPI\obj\Debug\net8.0\ref\masifAPI.dll
+C:\Users\Knut Edvard Kjersem\Code\masifAPI\obj\Debug\net8.0\masifAPI.csproj.AssemblyReference.cache
+C:\Users\Knut Edvard Kjersem\Code\masifAPI\obj\Debug\net8.0\masifAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Knut Edvard Kjersem\Code\masifAPI\obj\Debug\net8.0\masifAPI.AssemblyInfoInputs.cache
+C:\Users\Knut Edvard Kjersem\Code\masifAPI\obj\Debug\net8.0\masifAPI.AssemblyInfo.cs
+C:\Users\Knut Edvard Kjersem\Code\masifAPI\obj\Debug\net8.0\masifAPI.csproj.CoreCompileInputs.cache
+C:\Users\Knut Edvard Kjersem\Code\masifAPI\obj\Debug\net8.0\masifAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Knut Edvard Kjersem\Code\masifAPI\obj\Debug\net8.0\masifAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Knut Edvard Kjersem\Code\masifAPI\obj\Debug\net8.0\masifAPI.sourcelink.json
+C:\Users\Knut Edvard Kjersem\Code\masifAPI\obj\Debug\net8.0\masifAPI.dll
+C:\Users\Knut Edvard Kjersem\Code\masifAPI\obj\Debug\net8.0\refint\masifAPI.dll
+C:\Users\Knut Edvard Kjersem\Code\masifAPI\obj\Debug\net8.0\masifAPI.pdb

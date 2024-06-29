@@ -41,41 +41,15 @@ builder.Services.AddCors(options =>
       });
 });
 
-var connection = "Server=192.168.100.103;Database=masifAPI;Port=5432;User Id=knutekje;Password=hore23;Ssl Mode=Require";
+var connection = "Server=192.168.0.107;Database=masifAPI;Port=5432;User Id=knutekje;Password=hore23;Ssl Mode=Require";
 
 
-
-
-/* 
-builder.Services.AddDbContext<IncidentContext>(options =>
-    options.UseSqlServer(connection));
-
-builder.Services.AddDbContext<FoodItemContext>(options =>
-    options.UseSqlServer(connection));
-
-builder.Services.AddDbContext<ReportContext>(options =>
-    options.UseSqlServer(connection));
-
-builder.Services.AddDbContext<PictureContext>(options =>
-    options.UseSqlServer(connection));
-
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connection)); */
-
-builder.Services.AddDbContext<IncidentContext>(options =>
-          options.UseNpgsql(connection));
+builder.Services.AddDbContext<Masif>(options =>
+    options.UseNpgsql(connection));
           
-builder.Services.AddDbContext<FoodItemContext>(options =>
-          options.UseNpgsql(connection));
-
-builder.Services.AddDbContext<ReportContext>(options =>
-          options.UseNpgsql(connection));
-
-builder.Services.AddDbContext<PictureContext>(options =>
-          options.UseNpgsql(connection));
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connection)); 
+    options.UseNpgsql(connection)); 
 
   
   
