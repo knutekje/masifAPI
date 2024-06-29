@@ -47,10 +47,7 @@ var connection = "Server=192.168.0.107;Database=masifAPI;Port=5432;User Id=knute
 builder.Services.AddDbContext<ReportContext>(options =>
     options.UseNpgsql(connection));
           
-/* 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(connection)); 
- */
+
   
   
 
