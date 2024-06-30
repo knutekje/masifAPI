@@ -25,7 +25,7 @@ public class BildeController : ControllerBase {
         public async Task<ActionResult<byte[]>> GetPicture(long id)
         {
             var picture = await _context.Pictures.FindAsync(id);
-            string path = @picture.FileName;
+            string path = picture.FileName;
             byte[] something = System.IO.File.ReadAllBytes(path);
             if (picture == null)
             {

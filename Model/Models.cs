@@ -51,8 +51,7 @@ public class Report{
     public DateTime ReportedDate { get; set; }
 
     [Column("IncidentDate")]
-    public DateTime IncidentDate { get; set; }
-    
+    public DateTime IncidentDate { get; set; } 
     [Precision(18, 2)]
     [Column("Quantity")]
     public decimal Quantity { get; set; }

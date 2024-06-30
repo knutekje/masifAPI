@@ -27,7 +27,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddDirectoryBrowser();
-
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(
@@ -41,13 +41,10 @@ builder.Services.AddCors(options =>
 });
 
 var connection = "Host=192.168.0.107;Database=masifAPI;Username=knutekje;Password=hore23";
-/* void ConfigureServices(IServiceCollection services)
-{
-    // Other DI initializations
 
-    services.AddDbContext<MasifContext>(options =>
-            options.UseNpgsql(Configuration.GetConnectionString("MasifContext")));
-} */
+
+builder.Services.AddDbContext<ApplicationDbContext>(
+    options => options.UseNpgsql(connection));
 
 builder.Services.AddDbContext<MasifContext>(options =>
     options.UseNpgsql(connection));
@@ -56,10 +53,10 @@ builder.Services.AddDbContext<MasifContext>(options =>
 
   
 
-/* builder.Services.AddAuthorization();
+builder.Services.AddAuthorization();
 
 builder.Services.AddIdentityApiEndpoints<IdentityUser>()
-    .AddEntityFrameworkStores<ApplicationDbContext>(); */
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.  
@@ -67,7 +64,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-}//app.MapIdentityApi<IdentityUser>();
+}app.MapIdentityApi<IdentityUser>();
 
 
 
