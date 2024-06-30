@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Knut Edvard Kjersem\\Code\\masifAPI\\masifAPI.csproj": {}
+    "C:\\Users\\Knut Edvard Kjersem\\Code\\masif\\masifAPI\\masifAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Knut Edvard Kjersem\\Code\\masifAPI\\masifAPI.csproj": {
+    "C:\\Users\\Knut Edvard Kjersem\\Code\\masif\\masifAPI\\masifAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Knut Edvard Kjersem\\Code\\masifAPI\\masifAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Knut Edvard Kjersem\\Code\\masif\\masifAPI\\masifAPI.csproj",
         "projectName": "masifAPI",
-        "projectPath": "C:\\Users\\Knut Edvard Kjersem\\Code\\masifAPI\\masifAPI.csproj",
+        "projectPath": "C:\\Users\\Knut Edvard Kjersem\\Code\\masif\\masifAPI\\masifAPI.csproj",
         "packagesPath": "C:\\Users\\Knut Edvard Kjersem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Knut Edvard Kjersem\\Code\\masifAPI\\obj\\",
+        "outputPath": "C:\\Users\\Knut Edvard Kjersem\\Code\\masif\\masifAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

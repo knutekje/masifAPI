@@ -12,12 +12,12 @@ namespace masifAPI.Controllers;
 [Route("api/[controller]")]
 [ApiController]
 public class BildeController : ControllerBase {
-    private readonly PictureContext _context;
+    private readonly MasifContext _context;
     public class Upload{
         public IFormFile formFile;
         public string Description;
     }
-    public BildeController(PictureContext context){
+    public BildeController(MasifContext context){
         _context = context;
     }
 

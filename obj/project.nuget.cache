@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "prl1i6oEmQmclIs7x3xTVK0h2nlubu5VESqZMxA4umojP0S9Y7KasuVdDFZ/LLbam9DnUJwPF3DuGkgfxBvM9Q==",
+  "dgSpecHash": "7ACT43VAHYv/ui1MB50xjbSfnnNvqpQM1QsMwaAsQ6v7WC41WopAapIieqG75B6Y1YKXszeVjtrRx1afCA1Qyg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Knut Edvard Kjersem\\Code\\masifAPI\\masifAPI.csproj",
+  "projectFilePath": "C:\\Users\\Knut Edvard Kjersem\\Code\\masif\\masifAPI\\masifAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Knut Edvard Kjersem\\.nuget\\packages\\azure.core\\1.39.0\\azure.core.1.39.0.nupkg.sha512",
     "C:\\Users\\Knut Edvard Kjersem\\.nuget\\packages\\azure.identity\\1.11.3\\azure.identity.1.11.3.nupkg.sha512",

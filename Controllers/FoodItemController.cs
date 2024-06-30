@@ -13,12 +13,11 @@ namespace masifAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class FoodItemController : ControllerBase
     {
-        private readonly FoodItemContext _context;
+        private readonly MasifContext _context;
 
-        public FoodItemController(FoodItemContext context)
+        public FoodItemController(MasifContext context)
         {
             _context = context;
         }

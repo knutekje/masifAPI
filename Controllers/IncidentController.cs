@@ -14,9 +14,9 @@ namespace masifAPI.Controllers
     [ApiController]
     public class IncidentController : ControllerBase
     {
-        private readonly IncidentContext _context;
+        private readonly MasifContext _context;
 
-        public IncidentController(IncidentContext context)
+        public IncidentController(MasifContext context)
         {
             _context = context;
         }

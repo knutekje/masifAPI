@@ -16,7 +16,6 @@ using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.FileProviders;
 
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -41,20 +40,26 @@ builder.Services.AddCors(options =>
       });
 });
 
-var connection = "Server=192.168.0.107;Database=masifAPI;Port=5432;User Id=knutekje;Password=hore23;Ssl Mode=Require";
+var connection = "Host=192.168.0.107;Database=masifAPI;Username=knutekje;Password=hore23";
+/* void ConfigureServices(IServiceCollection services)
+{
+    // Other DI initializations
 
+    services.AddDbContext<MasifContext>(options =>
+            options.UseNpgsql(Configuration.GetConnectionString("MasifContext")));
+} */
 
-builder.Services.AddDbContext<ReportContext>(options =>
+builder.Services.AddDbContext<MasifContext>(options =>
     options.UseNpgsql(connection));
           
 
-  
+
   
 
-builder.Services.AddAuthorization();
+/* builder.Services.AddAuthorization();
 
 builder.Services.AddIdentityApiEndpoints<IdentityUser>()
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    .AddEntityFrameworkStores<ApplicationDbContext>(); */
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.  
@@ -62,8 +67,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-}
-app.MapIdentityApi<IdentityUser>();
+}//app.MapIdentityApi<IdentityUser>();
 
 
 

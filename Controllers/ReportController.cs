@@ -14,9 +14,9 @@ namespace masifAPI.Controllers
     [ApiController]
     public class ReportController : ControllerBase
     {
-        private readonly ReportContext _context;
+        private readonly MasifContext _context;
 
-        public ReportController(ReportContext context)
+        public ReportController(MasifContext context)
         {
             _context = context;
         }

@@ -15,9 +15,9 @@ namespace masifAPI.Controllers
     
     public class PictureController : ControllerBase
     {
-        private readonly PictureContext _context;
+        private readonly MasifContext _context;
 
-        public PictureController(PictureContext context)
+        public PictureController(MasifContext context)
         {
             _context = context;
         }

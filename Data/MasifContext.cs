@@ -8,73 +8,38 @@ namespace masifAPI.Data;
 
 
 
-public class IncidentContext : DbContext{
-   public IncidentContext(DbContextOptions<IncidentContext> options)
+public class MasifContext : DbContext{
+   public MasifContext(DbContextOptions<MasifContext> options)
         : base(options)
     {
     }
 
     public DbSet<Incident> Incidents { get; set; } = null!;
-
- protected override void OnModelCreating(ModelBuilder modelBuilder)
-{
-   modelBuilder.Entity<Incident>()
-    .Property(p => p.ValueIncident)
-    .HasComputedColumnSql("2 * [ItemPrice]");
-}
-
-
-
-}
-
-
-
-public class ReportContext : DbContext
-{
- public ReportContext(DbContextOptions<ReportContext> options)
-        : base(options)
-    {
-    }
-
     public DbSet<Report> Reports { get; set; } = null!;
-
-    protected override void OnModelCreating(ModelBuilder builder)
-    {
-       base.OnModelCreating(builder);
-    }
-}
-
-
-public class FoodItemContext : DbContext
-{
-    public FoodItemContext(DbContextOptions<FoodItemContext> options)
-        : base(options)
-    {
-    }
-
     public DbSet<FoodItem> FoodItems { get; set; } = null!;
-
-    protected override void OnModelCreating(ModelBuilder builder)
-    {
-       base.OnModelCreating(builder);
-    }
-    
-}
-
-
-public class PictureContext : DbContext
-{
-    public PictureContext(DbContextOptions<PictureContext> options)
-        : base(options)
-    {
-    }
-
     public DbSet<Picture> Pictures { get; set; } = null!;
 
-    protected override void OnModelCreating(ModelBuilder builder)
-    {
-       base.OnModelCreating(builder);
+     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            => optionsBuilder.UseNpgsql("Host=192.168.0.107;Database=masifAPI;Username=knutekje;Password=hore23");
     }
-    
+public class MasifContextFactory : IDesignTimeDbContextFactory<MasifContext>
+{
+    public MasifContext CreateDbContext(string[] args)
+    {
+        var optionsBuilder = new DbContextOptionsBuilder<MasifContext>();
+        optionsBuilder.UseNpgsql("Host=192.168.0.107;Database=masifAPI;Username=knutekje;Password=hore23");
+
+        return new MasifContext(optionsBuilder.Options);
+    }
 }
+
+
+
+
+
+
+
+
+
+
 
