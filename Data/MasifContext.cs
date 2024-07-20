@@ -20,14 +20,14 @@ public class MasifContext : DbContext{
     public DbSet<Picture> Pictures { get; set; } = null!;
 
      protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseNpgsql("Host=10.62.0.3;Database=masifAPI;Username=knutekje;Password=hore23");
+            => optionsBuilder.UseNpgsql("Host=35.226.45.13;Database=masifAPI;Username=knutekje;Password=hore23");
     }
 public class MasifContextFactory : IDesignTimeDbContextFactory<MasifContext>
 {
     public MasifContext CreateDbContext(string[] args)
     {
         var optionsBuilder = new DbContextOptionsBuilder<MasifContext>();
-        optionsBuilder.UseNpgsql("Host=10.62.0.3;Database=masifAPI;Username=knutekje;Password=hore23");
+        optionsBuilder.UseNpgsql("Host=35.226.45.13;Database=masifAPI;Username=knutekje;Password=hore23");
 
         return new MasifContext(optionsBuilder.Options);
     }
