@@ -40,7 +40,7 @@ builder.Services.AddCors(options =>
       });
 });
 
-var connection = "Host=10.62.0.3;Database=masifAPI;Username=knutekje;Password=hore23";
+var connection = "Host=10.62.0.3;Database=masifAPI;Username=;Password=";
 
 
 builder.Services.AddDbContext<ApplicationDbContext>(
