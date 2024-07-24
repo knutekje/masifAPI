@@ -21,14 +21,13 @@ namespace masifAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Incident
+      
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Incident>>> GetIncidents()
         {
             return await _context.Incidents.ToListAsync();
         }
 
-        // GET: api/Incident/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Incident>> GetIncident(long id)
         {
@@ -42,8 +41,6 @@ namespace masifAPI.Controllers
             return incident;
         }
 
-        // PUT: api/Incident/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutIncident(long id, Incident incident)
         {
@@ -73,8 +70,7 @@ namespace masifAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Incident
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPost]
         public async Task<ActionResult<Incident>> PostIncident(Incident incident)
         {
@@ -98,7 +94,7 @@ namespace masifAPI.Controllers
             return CreatedAtAction("GetIncident", new { id = incident.ReportID }, incident);
         }
 
-        // DELETE: api/Incident/5
+      
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteIncident(long id)
         {

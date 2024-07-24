@@ -21,14 +21,14 @@ namespace masifAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Report
+       
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Report>>> GetReports()
         {
             return await _context.Reports.ToListAsync();
         }
 
-        // GET: api/Report/5
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<Report>> GetReport(long id)
         {
@@ -45,8 +45,6 @@ namespace masifAPI.Controllers
         
         
 
-        // PUT: api/Report/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutReport(long id, Report report)
         {
@@ -76,8 +74,6 @@ namespace masifAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Report
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Report>> PostReport(Report report)
         {
@@ -90,7 +86,6 @@ namespace masifAPI.Controllers
 
         
 
-        // DELETE: api/Report/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteReport(long id)
         {

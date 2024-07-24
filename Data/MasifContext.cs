@@ -7,8 +7,8 @@ using Microsoft.EntityFrameworkCore.Design;
 namespace masifAPI.Data;
 
 
-
 public class MasifContext : DbContext{
+    
    public MasifContext(DbContextOptions<MasifContext> options)
         : base(options)
     {
